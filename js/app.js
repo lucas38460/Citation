@@ -1,10 +1,13 @@
 let baveu = document.getElementById('center');
 
+async function textrandom () {
+    fetch("https://api.quotable.io/random")
 
+    .then(response => response.json())
 
+    .then((data) => {
+        baveu.textContent = data.content;
+    });
+};
 
-fetch ('http://api.quotable.io/random').then((response)=>{
-    console.log(response).json()
-}).then((data)=>{
-    console.log(data.content)
-}).catch()
+textrandom();
